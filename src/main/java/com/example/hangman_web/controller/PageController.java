@@ -33,4 +33,10 @@ public class PageController {
         model.addAttribute("message", game.getLife() == 0 ? "noob" : "gg");
         return "game_end";
     }
+
+    @PostMapping("/new_game")
+    public String newGame(){
+        game = new Game();
+        return "redirect:/home";
+    }
 }

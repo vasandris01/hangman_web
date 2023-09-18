@@ -1,7 +1,6 @@
 package com.example.hangman_web.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Game {
     private String word;
@@ -10,7 +9,9 @@ public class Game {
     private Set<Character> inputs = new HashSet<>();
     private boolean isEnd = false;
     public Game(){
-        word = "macska";
+        List<String> words = ReadFileLineByLine
+                .reader("src/main/resources/static/words.txt");
+        word = words.get(new Random().nextInt(words.size()));
         wordAtLine = "_".repeat(word.length());
     }
 

@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PageController {
+    Game game = new Game();
     @GetMapping({"","/","/home"})
     public String getHome(Model model){
         model.addAttribute("input", new UserInput());
-        model.addAttribute("game", new Game());
+        model.addAttribute("game", game);
         return "home";
     }
 
     @PostMapping("/play")
-    public String choose(@ModelAttribute("input") UserInput input, @ModelAttribute("game") Game game){
-        System.out.println(game.isInTheWord(input.getChoice()));
+    public String choose(@ModelAttribute("input") UserInput input){
+        game.isInTheWord(input.getChoice());
         return "redirect:/home";
     }
 }

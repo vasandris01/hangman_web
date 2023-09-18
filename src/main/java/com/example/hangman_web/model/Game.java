@@ -9,6 +9,10 @@ public class Game {
         wordAtLine = "_".repeat(word.length());
     }
 
+    public void useChoice(String choice){
+
+    }
+
     private void overRideLine(String input){
         char inputAtChar = input.charAt(0);
         for (int i = 0; i < word.length(); i++) {
@@ -20,7 +24,7 @@ public class Game {
             }
         }
     }
-    public boolean isInTheWord(String string){
+    private boolean isInTheWord(String string){
         overRideLine(string);
         return word.contains(string);
     }

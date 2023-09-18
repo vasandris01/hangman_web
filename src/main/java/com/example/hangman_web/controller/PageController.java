@@ -20,7 +20,7 @@ public class PageController {
 
     @PostMapping("/play")
     public String choose(@ModelAttribute("input") UserInput input){
-        game.isInTheWord(input.getChoice());
+        game.useChoice(input.getChoice());
         return "redirect:/home";
     }
 }

@@ -7,6 +7,8 @@
 <body>
 <h1 th:text="${game.getWord()}"></h1>
 <h1 th:text="${game.getWordAtLine()}"></h1>
+<h1 th:text="${game.getLife()}"></h1>
+<h1 th:text="${game.getInputs()}"></h1>
 <form th:action="@{/play}" method="post">
     <input type="text" class="form-control" id="choice" maxlength="1" th:field="*{input.choice}">
     <label for="choice"></label>
